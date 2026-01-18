@@ -289,30 +289,48 @@ footer {
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-  .kelompok-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .hero-overlay h1 {
     font-size: 3rem;
   }
 }
 
 @media (max-width: 768px) {
+  /* AGAR NAVIGASI TETAP MUNCUL DI HP */
   .nav-links {
-    display: none;
-  } /* Idealnya menggunakan menu burger */
+    display: flex;         /* Mengubah dari 'none' ke 'flex' */
+    justify-content: center;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 0 10px;        /* Mengatur jarak antar menu di HP */
+  }
+
+  nav {
+    flex-direction: column; /* Logo di atas, menu di bawah */
+    padding: 1rem;
+  }
+
+  /* PERBAIKAN GAMBAR HERO DI HP */
+  .hero-kelompok {
+    height: 80vh;          /* Sedikit lebih pendek di HP */
+    background-attachment: scroll; /* Matikan efek 'fixed' karena sering error di mobile */
+    background-size: cover;
+    background-position: center center;
+    padding-top: 120px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.2rem;     /* Ukuran teks lebih kecil agar tidak pecah */
+  }
+
   .section-container {
     height: auto;
-    padding: 70px 0;
+    padding: 60px 0;
   }
-  .hero-overlay h1 {
-    font-size: 2.5rem;
-  }
+
   .resume-content {
-    padding: 25px;
-  }
-  .kelompok-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    padding: 20px;
   }
 }
